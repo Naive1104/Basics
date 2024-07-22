@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class BasicJavaOperations {
+    
+    // Method to add two numbers
+    public static int add(int a, int b) {
+        return a + b;
+    }
+    
+    // Method to subtract two numbers
+    public static int subtract(int a, int b) {
+        return a - b;
+    }
+    
+    // Method to multiply two numbers
+    public static int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    // Method to divide two numbers
+    public static double divide(double a, double b) {
+        if (b == 0) {
+            System.out.println("Error! Division by zero.");
+            return 0;
+        } else {
+            return a / b;
+        }
+    }
+    
+    // Main method
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Variables
+        int num1, num2;
+        double result;
+        char operator;
+        
+        // Input
+        System.out.println("Enter first number: ");
+        num1 = scanner.nextInt();
+        
+        System.out.println("Enter second number: ");
+        num2 = scanner.nextInt();
+        
+        System.out.println("Enter an operator (+, -, *, /): ");
+        operator = scanner.next().charAt(0);
+        
+        // Switch case to perform the selected operation
+        switch (operator) {
+            case '+':
+                result = add(num1, num2);
+                System.out.println("The result of " + num1 + " + " + num2 + " = " + result);
+                break;
+            case '-':
+                result = subtract(num1, num2);
+                System.out.println("The result of " + num1 + " - " + num2 + " = " + result);
+                break;
+            case '*':
+                result = multiply(num1, num2);
+                System.out.println("The result of " + num1 + " * " + num2 + " = " + result);
+                break;
+            case '/':
+                result = divide(num1, num2);
+                System.out.println("The result of " + num1 + " / " + num2 + " = " + result);
+                break;
+            default:
+                System.out.println("Invalid operator!");
+                break;
+        }
+        
+        // Close the scanner
+        scanner.close();
+    }
+}
